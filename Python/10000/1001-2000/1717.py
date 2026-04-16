@@ -1,4 +1,5 @@
 # https://www.acmicpc.net/problem/1717 : 집합의 표현 (Python 3)
+# 2026-04-15
 import sys
 sys.setrecursionlimit(1000000)
 
