@@ -1,0 +1,49 @@
+# https://www.acmicpc.net/problem/16933
+# 2026-04-25
+from collections import deque
+import sys
+input = sys.stdin.readline
+
+def solution():
+    def bfs(start):
+        q = deque()
+        q.append(start)
+        ans = 1
+        time = True
+        while q:
+            for _ in range(len(q)):
+                i, j, w = q.popleft()
+                
+                if i == n - 1 and j == m - 1:
+                    print(ans)
+                    return
+                
+                for dy, dx in dir:
+                    ni, nj = i + dy, j + dx
+                    if ni < 0 or ni >= n or nj < 0 or nj >= m or visited[ni][nj] <= w:
+                        continue
+                    if graph[ni][nj] == '0':
+                            q.append((ni, nj, w))
+                            visited[ni][nj] = w
+                    elif w < k:
+                        if not time: 
+                            q.append((i, j, w))
+                        else:
+                            visited[ni][nj] = w
+                            q.append((ni, nj, w + 1))
+            ans += 1
+            time = not time
+        print(-1)
+        return
+
+    n, m, k = map(int, input().split())
+    graph = [input().rstrip() for _ in range(n)]
+    visited = [[k + 1 for _ in range(m)] for _ in range(n)]
+    visited[0][0] = 0
+
+    dir = ((1, 0), (-1, 0), (0, 1), (0, -1))
+
+    bfs((0,0,0))
+
+if __name__ == "__main__":
+    solution()
