@@ -3,7 +3,6 @@
 import sys
 
 def solve():
-    # 1. 고속 입력: iter와 next 활용
     input_data = iter(sys.stdin.read().split())
     
     try:
