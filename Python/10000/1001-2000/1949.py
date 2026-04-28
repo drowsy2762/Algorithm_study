@@ -1,5 +1,5 @@
 # https://www.acmicpc.net/problem/1949
-# 2026-04-28
+# 2026-04-28 // 백준섭종으로 인한 마지막 문제가 됬음
 import sys
 
 def solution():
