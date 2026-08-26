@@ -17,3 +17,10 @@ def solution(skill, skill_trees):
         if is_valid:
             valid_count += 1
     return valid_count
+
+
+def solution(skill, skill_trees):
+    return sum(
+        skill.startswith("".join([s for s in tree if s in skill]))
+        for tree in skill_trees
+    )
