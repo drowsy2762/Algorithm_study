@@ -19,8 +19,8 @@ def solution(skill, skill_trees):
     return valid_count
 
 
-def solution(skill, skill_trees):
-    return sum(
-        skill.startswith("".join([s for s in tree if s in skill]))
-        for tree in skill_trees
-    )
+# def solution(skill, skill_trees):
+#     return sum(
+#         skill.startswith("".join([s for s in tree if s in skill]))
+#         for tree in skill_trees
+#     )
